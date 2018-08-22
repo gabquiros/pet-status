@@ -1,30 +1,20 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { Route, Link } from 'react-router-dom'
+import Home from '../Home/Home'
+import About from '../About/About'
 
-import logo from './logo.svg';
+const App = () => (
+  <div>
+    <header>
+      <Link to="/">Home</Link>
+      <Link to="/about-us">About</Link>
+    </header>
 
-import './App.css';
-
-class App extends Component {
-  render () {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    ...ownProps
-  }
-}
+    <main>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about-us" component={About} />
+    </main>
+  </div>
+);
 
 export default App;
