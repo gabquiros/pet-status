@@ -24,7 +24,7 @@ const getMiddleWare = () => {
 };
 
 const reducers = combineReducers({
-  petsReducer
+  pets: petsReducer
 });
 
 const store = createStore(
